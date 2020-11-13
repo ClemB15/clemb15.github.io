@@ -1,0 +1,60 @@
+/* CSS du menu en mobile */
+header {
+  width: 100%;
+
+  .menu_top {
+    background-color: $COULEURALPHA;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em ;
+
+    li {
+      list-style: none;
+      display: inline-block;
+
+      a {
+        width: 100%;
+        display: inline-block;
+        padding: 0.8em;
+        text-decoration: none;
+        color: white;
+      }
+    }
+
+    .logo_menu {
+      width: 80px;
+    }
+
+    color: white;
+
+    svg {
+      fill: white;
+      width: 15px;
+    }
+
+    .menu_desktop{
+      display: none;
+      text-decoration: none;
+    }
+  }
+}
+
+/* CSS du menu en responsive - Affichage à partir de la tablette */
+@media screen and (min-width: $MENU) {
+  header {
+    height: auto;
+    .menu_top{
+      .menu_desktop{
+        display: inline-block;
+      }
+      a:hover{
+        color: $BLEU;
+        font-weight: bold;
+          svg{
+            fill: $BLEU;
+          }
+      }
+    }
+  }
+}

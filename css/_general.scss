@@ -1,0 +1,131 @@
+$TABLET: "768px";
+$DESKTOP: "992px";
+$MENU: $TABLET;
+$COULEUR: rgb(67, 70, 78);
+$COULEURALPHA: rgb(67, 70, 78, 0.6);
+$BLEU: #2885b1;
+$BLEUFONCE: darken($BLEU, 25%);
+
+h1 {
+  text-transform: uppercase;
+}
+
+/* CSS principale du document avec l'image en background */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../img/lauzanne_img.jpg");
+  background-position: center;
+  height: 80vh;
+}
+
+/* CSS du menu principal en bas de page */
+.principale {
+  width: 90%;
+  margin: 64vh auto 0 auto;
+  text-align: center;
+  align-self: flex-end;
+
+  li {
+    list-style: none;
+    border-bottom: 1px solid white;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  a {
+    background-color: $COULEURALPHA;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    padding: 1em;
+    text-decoration: none;
+  }
+}
+
+.socialnetwork {
+  display: none;
+}
+
+/* CSS de la page en Desktop et tablette */
+@media screen and (min-width: $TABLET) {
+  .container {
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* On affiche la sidebar des réseaux sociaux */
+  .socialnetwork {
+    display: flex;
+    align-content: center;
+    align-items: end;
+    flex-direction: column;
+
+    .inner_content {
+      display: flex;
+      background-color: $BLEU;
+      align-items: center;
+
+      .deroulant {
+        width: 100px;
+        text-align: center;
+        display: none;
+        height: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        width: 100%;
+        padding: 0.8em;
+        font-weight: bold;
+
+        svg {
+          fill: white;
+          width: 30px;
+        }
+      }
+
+      /* Application des modifications lors du hover sur la 1ère balise a et sur la .deroulant */
+      a:hover {
+        background-color: $BLEUFONCE;
+      }
+
+      a:hover ~ .deroulant {
+        display: flex;
+        background-color: $BLEUFONCE;
+        align-items: center;
+      }
+    }
+  }
+
+  .principale {
+    margin-top: 0;
+
+    ul {
+      display: flex;
+    }
+
+    li {
+      display: inline-block;
+      flex-grow: 1;
+      border-right: 1px solid white;
+      border-bottom: none;
+
+      &:last-child {
+        border: none;
+      }
+
+      a:hover {
+        background-color: black;
+      }
+    }
+  }
+
+}
