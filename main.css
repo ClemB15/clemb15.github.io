@@ -1,0 +1,40 @@
+/* Reset  */
+*{
+    margin: 0;
+    padding: 0;
+}
+/* CSS de la page */
+.bcg_window{
+    background-color: #FFEFCA;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    margin: 0 auto;
+}
+
+input{
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.stores{
+    position: absolute;
+    width: 320px;
+    height: 320px;
+}
+
+.volet{
+    background-color: #D59D07;
+    width: 100%;
+    height: 28px;
+    display: flex;
+    margin: 4px 0;
+}
+
+.un{
+    margin: 0;
+}
